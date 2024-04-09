@@ -79,15 +79,16 @@ class _LibraryScreenState extends State<LibraryScreen> {
             style: TextStyle(
               fontWeight: FontWeight.w700,
               fontSize: 30,
-              color: Color(0xffFF6600),
+              color: Color(0xff1c4052),
+
             ),
           ),
           Text(
-            ' Books',
+            ' books',
             style: TextStyle(
               fontWeight: FontWeight.w700,
               fontSize: 30,
-              color: Color(0xff1c4052),
+              color: Color(0xffFF6600),
             ),
           ),
         ],
