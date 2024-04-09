@@ -3,6 +3,7 @@ import 'package:employee/models/book_model.dart';
 import 'package:employee/screens/book_info_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class LibraryScreen extends StatefulWidget {
   const LibraryScreen({Key? key}) : super(key: key);
@@ -35,15 +36,14 @@ class _LibraryScreenState extends State<LibraryScreen> {
           width: double.maxFinite,
           color: Color(0xffFF6600),
         ),
-        Expanded(
-          child: _buildGridView(),
-        ),
+        Expanded(child: _buildGridView()),
       ],
     );
   }
 
   PreferredSizeWidget _buildAppBar() {
     return AppBar(
+      leading: Icon(CupertinoIcons.arrow_left , color: Color(0xff253F50),),
       backgroundColor: Colors.white,
       scrolledUnderElevation: 0,
       title: Row(
@@ -99,6 +99,7 @@ class _LibraryScreenState extends State<LibraryScreen> {
     return Padding(
       padding: const EdgeInsets.only(left: 15.0),
       child: GridView.builder(
+        shrinkWrap: true,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           childAspectRatio: 275 / 475,
@@ -120,9 +121,9 @@ class _LibraryScreenState extends State<LibraryScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 0.0),
-              child: Expanded(
+            Expanded( // Place Expanded here
+              child: Padding(
+                padding: const EdgeInsets.only(left: 0.0),
                 child: Image.asset(
                   book.bookImage,
                   fit: BoxFit.cover,
